@@ -16,7 +16,6 @@ laravel performance monitoring
 
 ![Packagist Version](https://img.shields.io/packagist/v/inspector/laravel-query-inspector)
 ![Packagist Downloads](https://img.shields.io/packagist/dt/inspector/laravel-query-inspector)
-[![Tests](https://github.com/inspector/laravel-query-inspector/actions/workflows/ci.yml/badge.svg)](https://github.com/inspector/laravel-query-inspector/actions)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 **Laravel Query Inspector** is a zero-configuration database performance monitor for Laravel.
@@ -40,7 +39,7 @@ Most Laravel developers reach for `DB::listen()` or `dd()` to debug queries. Tha
 Laravel Query Inspector takes a different approach. It captures every query with full context (route, controller, user, request ID) and runs it through three dedicated detectors. If something looks wrong, it tells you exactly what and suggests a fix.
 
 | Feature                        | Query Inspector | Manual DB::listen | Generic Log Packages |
-|--------------------------------|-----------------|-------------------|----------------------|
+| ------------------------------ | --------------- | ----------------- | -------------------- |
 | Automatic slow query flagging  | ✓               | ✗                 | ✗                    |
 | N+1 pattern detection          | ✓               | ✗                 | ✗                    |
 | Duplicate query detection      | ✓               | ✗                 | ✗                    |
@@ -240,7 +239,7 @@ The `QueryData` DTO exposes: `sql`, `bindings`, `executionTime`, `connection`, `
 Navigate to `/query-monitor` (path is configurable) to access the built-in dashboard.
 
 | Page              | Route                              | Description                                               |
-|-------------------|------------------------------------|-----------------------------------------------------------|
+| ----------------- | ---------------------------------- | --------------------------------------------------------- |
 | Overview          | `/query-monitor`                   | Aggregate stats, query-type breakdown, quick links        |
 | All Queries       | `/query-monitor/queries`           | Filterable table of every recorded query                  |
 | Query Detail      | `/query-monitor/queries/{id}`      | Full SQL, bindings, metadata, and optimization tips       |
@@ -267,11 +266,11 @@ QUERY_MONITOR_GATE=viewQueryMonitor
 
 ## Artisan commands
 
-| Command                   | Purpose                                                                 |
-|---------------------------|-------------------------------------------------------------------------|
-| `query-monitor:install`   | Publish config and migrations (`--force`, `--migrate`)                  |
-| `query-monitor:clear`     | Delete log records (`--days=N` for retention window, `--force` to skip prompt) |
-| `query-monitor:report`    | Print an aggregate performance summary table (`--format=json`)          |
+| Command                 | Purpose                                                                        |
+| ----------------------- | ------------------------------------------------------------------------------ |
+| `query-monitor:install` | Publish config and migrations (`--force`, `--migrate`)                         |
+| `query-monitor:clear`   | Delete log records (`--days=N` for retention window, `--force` to skip prompt) |
+| `query-monitor:report`  | Print an aggregate performance summary table (`--format=json`)                 |
 
 Example report output:
 
@@ -436,6 +435,6 @@ Laravel Query Inspector is open-source software licensed under the [MIT](LICENSE
 
 ## Credits
 
-Laravel Query Inspector was built to give every Laravel developer a fast, clear answer to the question: *"Why is my application slow?"*
+Laravel Query Inspector was built to give every Laravel developer a fast, clear answer to the question: _"Why is my application slow?"_
 
 If you find it useful, consider starring the repository ⭐
