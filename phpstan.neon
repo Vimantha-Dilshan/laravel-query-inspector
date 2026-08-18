@@ -1,0 +1,14 @@
+includes:
+    - vendor/nunomaduro/larastan/extension.neon
+
+parameters:
+    paths:
+        - src
+
+    level: 6
+
+    checkModelProperties: true
+
+    ignoreErrors:
+        # Laravel magic methods on the facade
+        - '#Call to an undefined method Inspector\\QueryMonitor\\Facades\\QueryMonitor::#'

@@ -1,0 +1,75 @@
+{
+    "name": "inspector/laravel-query-inspector",
+    "description": "A production-quality Laravel package to monitor, analyze, and improve database query performance. Detect slow queries, N+1 issues, and duplicate queries in real time.",
+    "keywords": [
+        "laravel",
+        "query",
+        "performance",
+        "monitor",
+        "database",
+        "n+1",
+        "slow-query",
+        "query-inspector",
+        "debugging",
+        "profiling"
+    ],
+    "homepage": "https://github.com/inspector/laravel-query-inspector",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Query Inspector",
+            "email": "hello@queryinspector.io",
+            "homepage": "https://github.com/inspector/laravel-query-inspector",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "illuminate/console": "^10.0|^11.0|^12.0",
+        "illuminate/contracts": "^10.0|^11.0|^12.0",
+        "illuminate/database": "^10.0|^11.0|^12.0",
+        "illuminate/http": "^10.0|^11.0|^12.0",
+        "illuminate/routing": "^10.0|^11.0|^12.0",
+        "illuminate/support": "^10.0|^11.0|^12.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.0",
+        "nunomaduro/larastan": "^2.0|^3.0",
+        "orchestra/testbench": "^8.0|^9.0|^10.0",
+        "pestphp/pest": "^2.0|^3.0",
+        "pestphp/pest-plugin-laravel": "^2.0|^3.0",
+        "phpstan/phpstan": "^1.10|^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Inspector\\QueryMonitor\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Inspector\\QueryMonitor\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "pest",
+        "test:coverage": "pest --coverage --min=80",
+        "analyse": "phpstan analyse",
+        "format": "pint",
+        "format:check": "pint --test"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Inspector\\QueryMonitor\\QueryMonitorServiceProvider"
+            ],
+            "aliases": {
+                "QueryMonitor": "Inspector\\QueryMonitor\\Facades\\QueryMonitor"
+            }
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
